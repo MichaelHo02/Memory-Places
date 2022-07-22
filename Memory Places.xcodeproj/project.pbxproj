@@ -7,18 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12DAFF52882F9E60077865D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAFF42882F9E60077865D /* Util.swift */; };
+		C12DAFF72882FA6E0077865D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAFF62882FA6E0077865D /* Location.swift */; };
+		C12DAFFB2882FAD50077865D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAFFA2882FAD50077865D /* DataController.swift */; };
+		C12DAFFD2882FB240077865D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAFFC2882FB240077865D /* ImagePicker.swift */; };
+		C12DAFFF2882FD8D0077865D /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAFFE2882FD8D0077865D /* PlacesList.swift */; };
+		C12DB0012883027B0077865D /* PlaceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0002883027B0077865D /* PlaceRowView.swift */; };
+		C12DB004288303960077865D /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB003288303960077865D /* PlaceDetailView.swift */; };
+		C12DB00728831EAC0077865D /* ToolbarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB00628831EAC0077865D /* ToolbarContentView.swift */; };
+		C12DB00928839A160077865D /* ToolbarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB00828839A160077865D /* ToolbarDetailView.swift */; };
+		C12DB00B2883B0750077865D /* PlaceCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB00A2883B0750077865D /* PlaceCreationView.swift */; };
+		C12DB00E2883B24B0077865D /* ToolbarPlaceCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB00D2883B24B0077865D /* ToolbarPlaceCreationView.swift */; };
+		C12DB0102883B4ED0077865D /* GetImageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB00F2883B4ED0077865D /* GetImageSection.swift */; };
+		C12DB0122883B6970077865D /* AdditionalSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0112883B6970077865D /* AdditionalSectionView.swift */; };
+		C12DB0142883B88C0077865D /* AddressSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0132883B88C0077865D /* AddressSelectionView.swift */; };
+		C12DB0162883BD9A0077865D /* HeadingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0152883BD9A0077865D /* HeadingDetailView.swift */; };
+		C12DB0182883BFAA0077865D /* BodyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0172883BFAA0077865D /* BodyDetailView.swift */; };
+		C15AFC1F288561FE007E1830 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15AFC1E288561FE007E1830 /* MapView.swift */; };
 		C1FDA1F02882F66A005A1D0C /* Memory_PlacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA1EF2882F66A005A1D0C /* Memory_PlacesApp.swift */; };
 		C1FDA1F22882F66A005A1D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA1F12882F66A005A1D0C /* ContentView.swift */; };
 		C1FDA1F42882F66B005A1D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FDA1F32882F66B005A1D0C /* Assets.xcassets */; };
 		C1FDA1F72882F66B005A1D0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FDA1F62882F66B005A1D0C /* Preview Assets.xcassets */; };
+		C1FDA2022882F73C005A1D0C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA2002882F73C005A1D0C /* Model.xcdatamodeld */; };
+		C1FDA2052882F8BA005A1D0C /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA2032882F8BA005A1D0C /* Place+CoreDataClass.swift */; };
+		C1FDA2062882F8BA005A1D0C /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA2042882F8BA005A1D0C /* Place+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C12DAFF42882F9E60077865D /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		C12DAFF62882FA6E0077865D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C12DAFFA2882FAD50077865D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		C12DAFFC2882FB240077865D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C12DAFFE2882FD8D0077865D /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
+		C12DB0002883027B0077865D /* PlaceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRowView.swift; sourceTree = "<group>"; };
+		C12DB003288303960077865D /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		C12DB00628831EAC0077865D /* ToolbarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarContentView.swift; sourceTree = "<group>"; };
+		C12DB00828839A160077865D /* ToolbarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarDetailView.swift; sourceTree = "<group>"; };
+		C12DB00A2883B0750077865D /* PlaceCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCreationView.swift; sourceTree = "<group>"; };
+		C12DB00D2883B24B0077865D /* ToolbarPlaceCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlaceCreationView.swift; sourceTree = "<group>"; };
+		C12DB00F2883B4ED0077865D /* GetImageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageSection.swift; sourceTree = "<group>"; };
+		C12DB0112883B6970077865D /* AdditionalSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalSectionView.swift; sourceTree = "<group>"; };
+		C12DB0132883B88C0077865D /* AddressSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectionView.swift; sourceTree = "<group>"; };
+		C12DB0152883BD9A0077865D /* HeadingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingDetailView.swift; sourceTree = "<group>"; };
+		C12DB0172883BFAA0077865D /* BodyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyDetailView.swift; sourceTree = "<group>"; };
+		C15AFC1E288561FE007E1830 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		C1FDA1EC2882F66A005A1D0C /* Memory Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory Places.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FDA1EF2882F66A005A1D0C /* Memory_PlacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory_PlacesApp.swift; sourceTree = "<group>"; };
 		C1FDA1F12882F66A005A1D0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1FDA1F32882F66B005A1D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1FDA1F62882F66B005A1D0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C1FDA2012882F73C005A1D0C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C1FDA2032882F8BA005A1D0C /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C1FDA2042882F8BA005A1D0C /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +72,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C12DAFF82882FABB0077865D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C12DAFFA2882FAD50077865D /* DataController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C12DB0022883037D0077865D /* PlaceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C12DB003288303960077865D /* PlaceDetailView.swift */,
+				C12DB0152883BD9A0077865D /* HeadingDetailView.swift */,
+				C12DB0172883BFAA0077865D /* BodyDetailView.swift */,
+			);
+			path = PlaceDetail;
+			sourceTree = "<group>";
+		};
+		C12DB00528831E980077865D /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				C12DB00628831EAC0077865D /* ToolbarContentView.swift */,
+				C12DB00828839A160077865D /* ToolbarDetailView.swift */,
+				C12DB00D2883B24B0077865D /* ToolbarPlaceCreationView.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
+		C12DB00C2883B22C0077865D /* PlaceCreation */ = {
+			isa = PBXGroup;
+			children = (
+				C12DB00A2883B0750077865D /* PlaceCreationView.swift */,
+				C12DB00F2883B4ED0077865D /* GetImageSection.swift */,
+				C12DB0112883B6970077865D /* AdditionalSectionView.swift */,
+				C12DB0132883B88C0077865D /* AddressSelectionView.swift */,
+			);
+			path = PlaceCreation;
+			sourceTree = "<group>";
+		};
 		C1FDA1E32882F66A005A1D0C = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +130,14 @@
 		C1FDA1EE2882F66A005A1D0C /* Memory Places */ = {
 			isa = PBXGroup;
 			children = (
-				C1FDA1EF2882F66A005A1D0C /* Memory_PlacesApp.swift */,
+				C12DB00528831E980077865D /* Toolbar */,
+				C12DAFF82882FABB0077865D /* Controller */,
+				C1FDA1FF2882F6F8005A1D0C /* IntergratedComponent */,
+				C1FDA1FE2882F697005A1D0C /* PlacesView */,
+				C1FDA1FD2882F689005A1D0C /* Model */,
+				C12DAFF42882F9E60077865D /* Util.swift */,
 				C1FDA1F12882F66A005A1D0C /* ContentView.swift */,
+				C1FDA1EF2882F66A005A1D0C /* Memory_PlacesApp.swift */,
 				C1FDA1F32882F66B005A1D0C /* Assets.xcassets */,
 				C1FDA1F52882F66B005A1D0C /* Preview Content */,
 			);
@@ -65,6 +150,37 @@
 				C1FDA1F62882F66B005A1D0C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C1FDA1FD2882F689005A1D0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C12DAFF62882FA6E0077865D /* Location.swift */,
+				C1FDA2032882F8BA005A1D0C /* Place+CoreDataClass.swift */,
+				C1FDA2042882F8BA005A1D0C /* Place+CoreDataProperties.swift */,
+				C1FDA2002882F73C005A1D0C /* Model.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1FDA1FE2882F697005A1D0C /* PlacesView */ = {
+			isa = PBXGroup;
+			children = (
+				C12DB00C2883B22C0077865D /* PlaceCreation */,
+				C12DB0022883037D0077865D /* PlaceDetail */,
+				C12DAFFE2882FD8D0077865D /* PlacesList.swift */,
+				C12DB0002883027B0077865D /* PlaceRowView.swift */,
+			);
+			path = PlacesView;
+			sourceTree = "<group>";
+		};
+		C1FDA1FF2882F6F8005A1D0C /* IntergratedComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C12DAFFC2882FB240077865D /* ImagePicker.swift */,
+				C15AFC1E288561FE007E1830 /* MapView.swift */,
+			);
+			path = IntergratedComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +253,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12DB0162883BD9A0077865D /* HeadingDetailView.swift in Sources */,
+				C12DB0142883B88C0077865D /* AddressSelectionView.swift in Sources */,
 				C1FDA1F22882F66A005A1D0C /* ContentView.swift in Sources */,
+				C15AFC1F288561FE007E1830 /* MapView.swift in Sources */,
+				C12DB0122883B6970077865D /* AdditionalSectionView.swift in Sources */,
+				C12DB00E2883B24B0077865D /* ToolbarPlaceCreationView.swift in Sources */,
+				C12DB00928839A160077865D /* ToolbarDetailView.swift in Sources */,
+				C12DAFF52882F9E60077865D /* Util.swift in Sources */,
+				C1FDA2052882F8BA005A1D0C /* Place+CoreDataClass.swift in Sources */,
+				C12DAFFD2882FB240077865D /* ImagePicker.swift in Sources */,
+				C12DB0182883BFAA0077865D /* BodyDetailView.swift in Sources */,
+				C12DB00728831EAC0077865D /* ToolbarContentView.swift in Sources */,
 				C1FDA1F02882F66A005A1D0C /* Memory_PlacesApp.swift in Sources */,
+				C1FDA2062882F8BA005A1D0C /* Place+CoreDataProperties.swift in Sources */,
+				C12DAFFB2882FAD50077865D /* DataController.swift in Sources */,
+				C12DB00B2883B0750077865D /* PlaceCreationView.swift in Sources */,
+				C12DB004288303960077865D /* PlaceDetailView.swift in Sources */,
+				C1FDA2022882F73C005A1D0C /* Model.xcdatamodeld in Sources */,
+				C12DAFF72882FA6E0077865D /* Location.swift in Sources */,
+				C12DAFFF2882FD8D0077865D /* PlacesList.swift in Sources */,
+				C12DB0102883B4ED0077865D /* GetImageSection.swift in Sources */,
+				C12DB0012883027B0077865D /* PlaceRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +406,7 @@
 				DEVELOPMENT_TEAM = FA6LKG4QY6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate permision will give you protection feature";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +436,7 @@
 				DEVELOPMENT_TEAM = FA6LKG4QY6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate permision will give you protection feature";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +477,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1FDA2002882F73C005A1D0C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1FDA2012882F73C005A1D0C /* Model.xcdatamodel */,
+			);
+			currentVersion = C1FDA2012882F73C005A1D0C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C1FDA1E42882F66A005A1D0C /* Project object */;
 }

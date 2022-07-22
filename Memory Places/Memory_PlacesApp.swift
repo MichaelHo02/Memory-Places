@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct Memory_PlacesApp: App {
+    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(
+                    \.managedObjectContext,
+                     dataController.persistentContainer.viewContext
+                )
         }
     }
 }
