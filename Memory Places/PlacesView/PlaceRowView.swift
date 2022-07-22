@@ -21,8 +21,10 @@ struct PlaceRowView: View {
             image
                 .resizable()
                 .scaledToFit()
+                .padding(.vertical, 5)
                 .frame(maxWidth: 80)
                 .cornerRadius(5)
+
             Text(title)
             Spacer()
             Image(systemName: generateIcon("lock", modifier: ".open", haveModifier: !isLocked))

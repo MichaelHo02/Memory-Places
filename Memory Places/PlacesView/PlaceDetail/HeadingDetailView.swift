@@ -41,7 +41,6 @@ struct HeadingDetailView: View {
                         Image(systemName: forwardIcon)
                     }
                     Spacer()
-                    Text("Excited Level: \(excitedLevel)")
                 }
                 .foregroundStyle(.secondary)
             }

@@ -66,6 +66,9 @@ struct PlaceCreationView: View {
             .sheet(isPresented: $showingImagePicker) { ImagePicker(image: $inputImage) }
             .onChange(of: inputImage) { _ in loadImage() }
         }
+        .onSubmit {
+            isFocusKeyboard = false
+        }
     }
     
     private func loadImage() {

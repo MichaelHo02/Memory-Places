@@ -15,8 +15,10 @@ struct BodyDetailView: View {
         VStack(alignment: .leading, spacing: 5) {
             Text("About \(title)")
                 .font(.title2)
+                .foregroundColor(.secondary)
             
             Text(about)
+
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
