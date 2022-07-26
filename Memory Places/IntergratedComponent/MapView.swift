@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 0))
+    @State private var mapRegion:MKCoordinateRegion
     var locations: [Location]
 
     
@@ -23,5 +23,10 @@ struct MapView: View {
         }
         .navigationTitle("Location")
         .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    init(latitude: Double, longitude: Double, locations: [Location]) {
+        self.mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        self.locations = locations
     }
 }

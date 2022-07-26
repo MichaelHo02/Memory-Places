@@ -34,7 +34,7 @@ struct HeadingDetailView: View {
                     .foregroundStyle(.primary)
                 HStack {
                     NavigationLink {
-                        MapView(locations: [Location(id: UUID(), latitude: latitude, longitude: longitude)])
+                        MapView(latitude: latitude, longitude: longitude, locations: [Location(id: UUID(), latitude: latitude, longitude: longitude)])
                     } label: {
                         Label(address, systemImage: addressIcon)
                         Image(systemName: forwardIcon)

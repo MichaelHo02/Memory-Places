@@ -27,12 +27,10 @@ struct PlaceCreationView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
-    
     @State private var locations = [Location]()
 
     
-    private var promptTitle = "Place Title"
+    private var promptTitle = "Name or Title"
     
     var body: some View {
         NavigationView {
@@ -50,7 +48,7 @@ struct PlaceCreationView: View {
                     Text("Write down all of the memory about this place.")
                 }
                 AddressSelectionView(
-                    address: $address, mapRegion: $mapRegion, locations: $locations
+                    address: $address, locations: $locations
                 ).focused($isFocusKeyboard)
             }
             .navigationTitle("New Place")

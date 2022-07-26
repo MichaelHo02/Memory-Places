@@ -9,8 +9,9 @@ import SwiftUI
 import MapKit
 
 struct AddressSelectionView: View {
+    @State var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 10, longitude: 106), span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50))
+    
     @Binding var address: String
-    @Binding var mapRegion: MKCoordinateRegion
     @Binding var locations: [Location]
     
     private let iconMap = "mappin"
@@ -20,7 +21,7 @@ struct AddressSelectionView: View {
     
     var body: some View {
         Section {
-            TextField("Place's Address", text: $address)
+            TextField("Address", text: $address)
             ZStack {
                 Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
@@ -32,9 +33,9 @@ struct AddressSelectionView: View {
                 .frame(minHeight: 400)
                 
                 Circle()
-                    .fill(.blue)
-                    .opacity(0.3)
-                    .frame(width: 32, height: 32)
+                    .fill(.red)
+                    .opacity(0.5)
+                    .frame(width: 16, height: 16)
                 
                 VStack {
                     Spacer()
