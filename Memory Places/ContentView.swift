@@ -11,6 +11,8 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var places: FetchedResults<Place>
     
+    @State var showOnBoard = true
+    
     @State private var showingCreationSheet = false
     @State private var searchValue = ""
     
@@ -42,8 +44,8 @@ struct ContentView: View {
                     count: places.count
                 )
             }
-            .sheet(isPresented: $showingCreationSheet) { PlaceCreationView()
-            }
+            .sheet(isPresented: $showingCreationSheet) { PlaceCreationView() }
+            .fullScreenCover(isPresented: $showOnBoard) { OnBoardView() }
         }
         .navigationViewStyle(.stack)
     }
