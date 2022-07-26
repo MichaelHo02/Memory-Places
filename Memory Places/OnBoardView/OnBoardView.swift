@@ -21,7 +21,7 @@ struct OnBoardView: View {
         VStack(alignment: .leading, spacing: 20) {
             OnBoardItem(icon: "note.text", title: "Quick Creation", description: "Simply type or use the quick toolbar to create places.", color: .orange)
             
-            OnBoardItem(icon: "square.grid.2x2", title: "Easy Organizing", description: "Create places to save all the memories and cateogrize them with favorite tags. Search quickly to reminding you of the places you have visited.", color: .mint)
+            OnBoardItem(icon: "square.grid.2x2", title: "Easy Organizing", description: "Cateogrize places with favorite tags. Search quickly to remind you of places you have visited.", color: .mint)
             
             OnBoardItem(icon: "hand.raised.square", title: "Priotize Privacy", description: "Places can be lock so that you will be the only one to access the information.", color: .blue)
             
@@ -42,7 +42,7 @@ struct OnBoardView: View {
             .buttonStyle(.borderedProminent)
             .padding(.bottom, 10)
         }
-        .padding()
+        .padding(30)
     }
 }
 

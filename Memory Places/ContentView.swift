@@ -11,7 +11,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var places: FetchedResults<Place>
     
-    @State var showOnBoard = true
+    @AppStorage("showOnBoard") var showOnBoard = true
     
     @State private var showingCreationSheet = false
     @State private var searchValue = ""
