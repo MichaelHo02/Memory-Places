@@ -53,9 +53,11 @@ struct ContentView: View {
             let newPlace = Place(context: moc)
             newPlace.id = UUID()
             newPlace.title = ["Fry", "Anchor", "Henry", "Garry", "Double", "Angle", "Western", "Hanoi", "Taylor"].randomElement()!
+            newPlace.startDate = Date()
+            newPlace.endDate = Date()
             newPlace.about = "This is the best mock place"
             newPlace.address = "123 Google Street"
-            newPlace.excitingLevel = Int16(Int.random(in: 1...5))
+            newPlace.rate = Int16(Int.random(in: 1...5))
             newPlace.isFavorited = Bool.random()
             newPlace.isLocked = Bool.random()
             newPlace.image = nil

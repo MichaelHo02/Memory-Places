@@ -3,16 +3,18 @@
     <entity name="Place" representedClassName="Place" syncable="YES">
         <attribute name="about" attributeType="String"/>
         <attribute name="address" attributeType="String"/>
-        <attribute name="excitingLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isFavorited" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isLocked" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rate" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Place" positionX="-36" positionY="9" width="128" height="179"/>
+        <element name="Place" positionX="-36" positionY="9" width="128" height="209"/>
     </elements>
 </model>

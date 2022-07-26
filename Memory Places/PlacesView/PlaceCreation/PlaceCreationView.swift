@@ -15,9 +15,11 @@ struct PlaceCreationView: View {
 
     
     @State private var title = ""
+    @State private var startDate = Date()
+    @State private var endDate = Date()
     @State private var address = ""
     @State private var about = ""
-    @State private var excitedLevel = 3
+    @State private var rate = 3
     @State private var isFavorited = false
     @State private var isLocked = false
     
@@ -36,10 +38,12 @@ struct PlaceCreationView: View {
         NavigationView {
             Form {
                 Section { TextField(promptTitle, text: $title).focused($isFocusKeyboard) }
+                Section {
+                    DatePicker("Start date", selection: $startDate, displayedComponents: [.date])
+                    DatePicker("End date", selection: $endDate, in: startDate..., displayedComponents: [.date])
+                }
                 GetImageSection(image: $image, showingImagePicker: $showingImagePicker)
-                AdditionalSectionView(
-                    excitedLevel: $excitedLevel, isLocked: $isLocked, isFavorited: $isFavorited
-                )
+                AdditionalSectionView(rate: $rate, isLocked: $isLocked, isFavorited: $isFavorited)
                 Section { TextEditor(text: $about).focused($isFocusKeyboard) } header: {
                     Text("Description")
                 } footer: {
@@ -82,9 +86,11 @@ struct PlaceCreationView: View {
         let newPlace = Place(context: moc)
         newPlace.id = UUID()
         newPlace.title = title
+        newPlace.startDate = startDate
+        newPlace.endDate = endDate
         newPlace.address = address
         newPlace.about = about
-        newPlace.excitingLevel = Int16(excitedLevel)
+        newPlace.rate = Int16(rate)
         newPlace.isFavorited = isFavorited
         newPlace.isLocked = isLocked
         newPlace.image = inputImage?.jpegData(compressionQuality: 0.5)

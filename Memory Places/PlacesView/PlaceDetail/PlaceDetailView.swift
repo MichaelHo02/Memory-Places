@@ -37,12 +37,11 @@ struct PlaceDetailView: View {
                     paddingSize: place.image == nil ? 20 : 0,
                     title: place.title,
                     address: place.address,
-                    excitedLevel: Int(place.excitingLevel),
                     latitude: place.latitude,
                     longitude: place.longitude
                 )
-                
-                BodyDetailView(title: place.title, about: place.about)
+
+                BodyDetailView(title: place.title, rate: Int(place.rate), startDate: place.startDate, endDate: place.endDate, about: place.about)
             }
         }
         .navigationTitle("Details")

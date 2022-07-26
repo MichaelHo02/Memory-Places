@@ -24,6 +24,8 @@
 		C12DB0162883BD9A0077865D /* HeadingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0152883BD9A0077865D /* HeadingDetailView.swift */; };
 		C12DB0182883BFAA0077865D /* BodyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DB0172883BFAA0077865D /* BodyDetailView.swift */; };
 		C15AFC1F288561FE007E1830 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15AFC1E288561FE007E1830 /* MapView.swift */; };
+		C1866EE3288EA8AE002DA825 /* ExtensionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1866EE2288EA8AE002DA825 /* ExtensionModel.swift */; };
+		C1866EE5288EDC1B002DA825 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1866EE4288EDC1B002DA825 /* RateView.swift */; };
 		C1FDA1F02882F66A005A1D0C /* Memory_PlacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA1EF2882F66A005A1D0C /* Memory_PlacesApp.swift */; };
 		C1FDA1F22882F66A005A1D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDA1F12882F66A005A1D0C /* ContentView.swift */; };
 		C1FDA1F42882F66B005A1D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FDA1F32882F66B005A1D0C /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		C12DB0152883BD9A0077865D /* HeadingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingDetailView.swift; sourceTree = "<group>"; };
 		C12DB0172883BFAA0077865D /* BodyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyDetailView.swift; sourceTree = "<group>"; };
 		C15AFC1E288561FE007E1830 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C1866EE2288EA8AE002DA825 /* ExtensionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionModel.swift; sourceTree = "<group>"; };
+		C1866EE4288EDC1B002DA825 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		C1FDA1EC2882F66A005A1D0C /* Memory Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory Places.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FDA1EF2882F66A005A1D0C /* Memory_PlacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory_PlacesApp.swift; sourceTree = "<group>"; };
 		C1FDA1F12882F66A005A1D0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C12DAFF62882FA6E0077865D /* Location.swift */,
+				C1866EE2288EA8AE002DA825 /* ExtensionModel.swift */,
 				C1FDA2032882F8BA005A1D0C /* Place+CoreDataClass.swift */,
 				C1FDA2042882F8BA005A1D0C /* Place+CoreDataProperties.swift */,
 				C1FDA2002882F73C005A1D0C /* Model.xcdatamodeld */,
@@ -170,6 +175,7 @@
 				C12DB0022883037D0077865D /* PlaceDetail */,
 				C12DAFFE2882FD8D0077865D /* PlacesList.swift */,
 				C12DB0002883027B0077865D /* PlaceRowView.swift */,
+				C1866EE4288EDC1B002DA825 /* RateView.swift */,
 			);
 			path = PlacesView;
 			sourceTree = "<group>";
@@ -258,10 +264,12 @@
 				C1FDA1F22882F66A005A1D0C /* ContentView.swift in Sources */,
 				C15AFC1F288561FE007E1830 /* MapView.swift in Sources */,
 				C12DB0122883B6970077865D /* AdditionalSectionView.swift in Sources */,
+				C1866EE3288EA8AE002DA825 /* ExtensionModel.swift in Sources */,
 				C12DB00E2883B24B0077865D /* ToolbarPlaceCreationView.swift in Sources */,
 				C12DB00928839A160077865D /* ToolbarDetailView.swift in Sources */,
 				C12DAFF52882F9E60077865D /* Util.swift in Sources */,
 				C1FDA2052882F8BA005A1D0C /* Place+CoreDataClass.swift in Sources */,
+				C1866EE5288EDC1B002DA825 /* RateView.swift in Sources */,
 				C12DAFFD2882FB240077865D /* ImagePicker.swift in Sources */,
 				C12DB0182883BFAA0077865D /* BodyDetailView.swift in Sources */,
 				C12DB00728831EAC0077865D /* ToolbarContentView.swift in Sources */,

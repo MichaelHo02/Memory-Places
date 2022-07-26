@@ -13,7 +13,6 @@ struct HeadingDetailView: View {
     let paddingSize: CGFloat
     let title: String
     let address: String
-    let excitedLevel: Int
     let latitude: Double
     let longitude: Double
     
