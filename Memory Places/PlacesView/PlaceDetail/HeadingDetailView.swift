@@ -16,8 +16,6 @@ struct HeadingDetailView: View {
     let latitude: Double
     let longitude: Double
     
-    @State var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
-    
     private let addressIcon = "mappin"
     private let forwardIcon = "chevron.forward"
     
@@ -36,10 +34,11 @@ struct HeadingDetailView: View {
                     NavigationLink {
                         MapView(latitude: latitude, longitude: longitude, locations: [Location(id: UUID(), latitude: latitude, longitude: longitude)])
                     } label: {
-                        Label(address, systemImage: addressIcon)
+                        Image(systemName: addressIcon)
+                        Text("View on map")
                         Image(systemName: forwardIcon)
                     }
-                    Spacer()
+                    Spacer(minLength: 0)
                 }
                 .foregroundStyle(.secondary)
             }

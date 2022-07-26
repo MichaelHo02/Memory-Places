@@ -19,7 +19,7 @@ extension Place {
     @NSManaged public var about: String
     @NSManaged public var address: String
     @NSManaged public var rate: Int16
-    @NSManaged public var id: UUID
+    @NSManaged public var id: UUID?
     @NSManaged public var image: Data?
     @NSManaged public var isFavorited: Bool
     @NSManaged public var isLocked: Bool
@@ -28,6 +28,7 @@ extension Place {
     @NSManaged public var title: String
     @NSManaged public var startDate: Date
     @NSManaged public var endDate: Date
+    @NSManaged public var people: [String]
 
 }
 

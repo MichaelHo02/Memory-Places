@@ -12,11 +12,33 @@ struct BodyDetailView: View {
     let rate: Int
     let startDate: Date
     let endDate: Date
+    let people: [String]
     let about: String
     
+    let longitude: Double
+    let latitude: Double
+    let address: String
+    
+    private let addressIcon = "mappin"
+    private let forwardIcon = "chevron.forward"
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 40) {
-            VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: 30) {
+            HStack {
+                Text("Rating")
+                    .font(.title2)
+                Spacer()
+                RateView(rating: .constant(rate), maximumRating: 5, offImage: Image(systemName: "heart"), onImage: Image(systemName: "heart.fill"))
+            }
+            
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Location")
+                    .font(.title2)
+                
+                Text(address)
+            }
+            
+            VStack(alignment: .leading, spacing: 10) {
                 Text("Timeline")
                     .font(.title2)
                 HStack {
@@ -28,15 +50,21 @@ struct BodyDetailView: View {
                 }
             }
             
-            HStack {
-                Text("Excited Level")
+            VStack(alignment: .leading, spacing: 10) {
+                Text("People")
                     .font(.title2)
-                Spacer()
-                RateView(rating: .constant(rate), maximumRating: 5, offImage: Image(systemName: "heart"), onImage: Image(systemName: "heart.fill"))
-                    .padding(.vertical)
+                Divider()
+                ForEach(people, id: \.self) { person in
+                    HStack {
+                        Image(systemName: "person")
+                        Text(person)
+                        Spacer()
+                    }
+                    Divider()
+                }
             }
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text("About \(title)")
                     .font(.title2)
                 Divider()

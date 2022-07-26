@@ -22,6 +22,7 @@ struct PlaceCreationView: View {
     @State private var rate = 3
     @State private var isFavorited = false
     @State private var isLocked = false
+    @State private var people = [String]()
     
     @State private var image: Image?
     @State private var showingImagePicker = false
@@ -40,8 +41,14 @@ struct PlaceCreationView: View {
                     DatePicker("Start date", selection: $startDate, displayedComponents: [.date])
                     DatePicker("End date", selection: $endDate, in: startDate..., displayedComponents: [.date])
                 }
+                
                 GetImageSection(image: $image, showingImagePicker: $showingImagePicker)
+                
                 AdditionalSectionView(rate: $rate, isLocked: $isLocked, isFavorited: $isFavorited)
+                
+                PeopleSectionView(attendees: $people)
+                    .focused($isFocusKeyboard)
+                
                 Section { TextEditor(text: $about).focused($isFocusKeyboard) } header: {
                     Text("Description")
                 } footer: {
@@ -86,6 +93,7 @@ struct PlaceCreationView: View {
         newPlace.title = title
         newPlace.startDate = startDate
         newPlace.endDate = endDate
+        newPlace.people = people
         newPlace.address = address
         newPlace.about = about
         newPlace.rate = Int16(rate)

@@ -40,8 +40,8 @@ struct PlaceDetailView: View {
                     latitude: place.latitude,
                     longitude: place.longitude
                 )
-
-                BodyDetailView(title: place.title, rate: Int(place.rate), startDate: place.startDate, endDate: place.endDate, about: place.about)
+                
+                BodyDetailView(title: place.title, rate: Int(place.rate), startDate: place.startDate, endDate: place.endDate, people: place.people, about: place.about, longitude: place.longitude, latitude: place.latitude, address: place.address)
             }
         }
         .navigationTitle("Details")
