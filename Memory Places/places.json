@@ -52,5 +52,98 @@
         ],
         "longitude": 106,
         "latitude": 10,
-    }
+    },
+    {
+        "title": "Zone 87",
+        "startDate": "2022-06-06",
+        "endDate": "2022-06-06",
+        "about": "A good place to hangout with friends and lover. It has lots of restaurants near the area, and bar club. I visited here on vestial time which is very excited.",
+        "address": "Số 87 Đường Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. HCM",
+        "rate": 5,
+        "isFavorited": true,
+        "isLocked": true,
+        "people": [
+            "Michael",
+            "Henry",
+            "John",
+            "Alvin",
+            "Sarah",
+            "Jackie",
+            "Tommy"
+        ],
+        "longitude": 106,
+        "latitude": 10,
+    },
+    {
+        "title": "Jump Arena",
+        "startDate": "2022-07-07",
+        "endDate": "2022-07-07",
+        "about": "A good place to hangout with friends. It has lots of restaurants near the area. It is suitable if you want to do exercise and competiting with friends.",
+        "address": "60 Xa lộ Hà Nội, Phường Thảo Điền, Quận 2, TP. HCM",
+        "rate": 4,
+        "isFavorited": true,
+        "isLocked": false,
+        "people": [
+            "Michael",
+            "Henry",
+            "John",
+            "Alvin",
+            "Jackie",
+            "Tommy"
+        ],
+        "longitude": 106,
+        "latitude": 10,
+    },
+    {
+        "title": "Chợ Bến Thành",
+        "startDate": "2022-10-20",
+        "endDate": "2022-10-20",
+        "about": "A good place to hangout with friends, families, and lovers. It has lots of restaurants. It is suitable if you want to shopping unique items in Vietnam and enjoy the cuisine.",
+        "address": "Đường Lê Lợi, thuộc phường Bến Nghé, Quận 1, TP. HCM",
+        "rate": 2,
+        "isFavorited": false,
+        "isLocked": false,
+        "people": [
+            "Michael",
+            "Alvin",
+            "Alvin's girlfriend"
+            "Sarah"
+        ],
+        "longitude": 106,
+        "latitude": 10,
+    },
+    {
+        "title": "Vinhomes Central Park",
+        "startDate": "2022-6-12",
+        "endDate": "2022-6-12",
+        "about": "A good place to hangout with friends, families, and lovers. It has lots of restaurants and shopping center near the place. It is suitable if you want to shopping and enjoy the cuisine. It is a little hot if you go in the summer.",
+        "address": "Số 208 đường Nguyễn Hữu Cảnh, thuộc phường 22, quận Bình Thạnh, TP. HCM",
+        "rate": 3,
+        "isFavorited": false,
+        "isLocked": false,
+        "people": [
+            "Michael",
+            "Alvin",
+            "Alvin's girlfriend"
+            "Sarah"
+        ],
+        "longitude": 106,
+        "latitude": 10,
+    },
+    {
+        "title": "Phố đi bộ Nguyễn Huệ",
+        "startDate": "2022-12-12",
+        "endDate": "2022-12-12",
+        "about": "A good place to hangout with friends, families, and lovers. It has lots of restaurants, coffee shops, bookstore, and shopping center near the place. It is suitable if you want to shopping and enjoy the cuisine. It is a little hot if you go in the summer. It is also too crownded if you go on holiday.",
+        "address": "Số 208 đường Nguyễn Hữu Cảnh, thuộc phường 22, quận Bình Thạnh, TP. HCM",
+        "rate": 3,
+        "isFavorited": false,
+        "isLocked": false,
+        "people": [
+            "Michael",
+            "Sarah"
+        ],
+        "longitude": 106,
+        "latitude": 10,
+    },
 ]
