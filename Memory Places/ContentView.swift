@@ -11,7 +11,8 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var places: FetchedResults<Place>
     
-    @AppStorage("showOnBoard") var showOnBoard = true
+//    @AppStorage("showOnBoard") var showOnBoard = true
+    @State var showOnBoard = true
     
     @State private var showingCreationSheet = false
     @State private var searchValue = ""
@@ -51,18 +52,23 @@ struct ContentView: View {
     }
     
     private func addMockData() {
-        for _ in 1...5 {
+        let jsonPlaces: [JSONPlace] = Bundle.main.decode("places.json")
+        print(jsonPlaces[0])
+        for jsonPlace in jsonPlaces {
             let newPlace = Place(context: moc)
             newPlace.id = UUID()
-            newPlace.title = ["Fry", "Anchor", "Henry", "Garry", "Double", "Angle", "Western", "Hanoi", "Taylor"].randomElement()!
-            newPlace.startDate = Date()
-            newPlace.endDate = Date()
-            newPlace.about = "This is the best mock place"
-            newPlace.address = "123 Google Street"
-            newPlace.rate = Int16(Int.random(in: 1...5))
-            newPlace.isFavorited = Bool.random()
-            newPlace.isLocked = Bool.random()
+            newPlace.title = jsonPlace.title
+            newPlace.startDate = jsonPlace.startDate
+            newPlace.endDate = jsonPlace.endDate
+            newPlace.about = jsonPlace.about
+            newPlace.address = jsonPlace.address
+            newPlace.rate = Int16(jsonPlace.rate)
+            newPlace.isFavorited = jsonPlace.isFavorited
+            newPlace.isLocked = jsonPlace.isLocked
             newPlace.image = nil
+            newPlace.people = jsonPlace.people
+            newPlace.longitude = jsonPlace.longitude
+            newPlace.latitude = jsonPlace.latitude
             saveMOC(moc)
         }
     }

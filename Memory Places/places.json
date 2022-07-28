@@ -1,0 +1,18 @@
+[
+    {
+        "title": "A",
+        "startDate": "2020-01-01",
+        "endDate": "2020-01-01",
+        "about": "This is the best mock place",
+        "address": "123 Google Street",
+        "rate": 3,
+        "isFavorited": true,
+        "isLocked": false,
+        "people": [
+            "Michael",
+            "Sarah"
+        ],
+        "longitude": 106,
+        "latitude": 10,
+    }
+]
