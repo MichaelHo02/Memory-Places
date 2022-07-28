@@ -57,6 +57,7 @@ struct BodyDetailView: View {
                 ForEach(people, id: \.self) { person in
                     HStack {
                         Image(systemName: "person")
+                            .foregroundColor(.mint)
                         Text(person)
                         Spacer()
                     }

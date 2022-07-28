@@ -12,36 +12,45 @@ struct AdditionalSectionView: View {
     @Binding var isLocked: Bool
     @Binding var isFavorited: Bool
     
+    private let headerAdditonal = "Additional Info"
+    
+    private let labelRate = "Rate"
+    private let labelRateIcon = "heart"
+    private let labelRateIconSelected = "heart.fill"
+    
+    private let labelLock = "Lock"
+    private let labelLockIcon = "lock"
+    private let labelLockIconAlternative = ".open"
+    
+    private let labelFavorite = "Favorite"
+    private let labelFavoriteIcon = "star"
+    private let labelFavoriteIconAlternative = ".fill"
+    
     var body: some View {
         Section {
-//            Picker(selection: $excitedLevel) {
-//                ForEach(1...5, id: \.self) {
-//                    Text("\($0)")
-//                }
-//            } label: {
-//                Label("Excited Level", systemImage: "hand.thumbsup")
-//            }
             HStack {
-                Label("Rate", systemImage: "heart")
+                Label(labelRate, systemImage: labelRateIcon)
                 Spacer()
                 RateView(
                     rating: $rate, maximumRating: 5,
-                    offImage: Image(systemName: "heart"),
-                    onImage: Image(systemName: "heart.fill")
+                    offImage: Image(systemName: labelRateIcon),
+                    onImage: Image(systemName: labelRateIconSelected)
                 )
             }
             
             Toggle(isOn: $isLocked) {
-                Label("Lock", systemImage: generateIcon(
-                    "lock", modifier: ".open", haveModifier: !isLocked
-                ))
-            }
-            Toggle(isOn: $isFavorited) {
-                Label("Favorite", systemImage: generateIcon(
-                    "star", modifier: ".fill", haveModifier: isFavorited
+                Label(labelLock, systemImage: generateIcon(
+                    labelLockIcon, modifier: labelLockIconAlternative, haveModifier: !isLocked
                 ))
             }
             
+            Toggle(isOn: $isFavorited) {
+                Label(labelFavorite, systemImage: generateIcon(
+                    labelFavoriteIcon, modifier: labelFavoriteIconAlternative, haveModifier: isFavorited
+                ))
+            }
+        } header: {
+            Text(headerAdditonal)
         }
     }
 }

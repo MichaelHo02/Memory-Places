@@ -31,15 +31,32 @@ struct PlaceCreationView: View {
     @State private var locations = [Location]()
 
     
-    private var promptTitle = "Name or Title"
+    private let promptTitle = "Name or Title"
+    private let promptStartDate = "Start date"
+    private let promptEndDate = "End date"
+    
+    private let headerTitle = "Name | Title"
+    
+    private let headerDate = "Timeline"
+    private let footerDate = "Pick a day when you arrived and when you leaved."
+    
+    private let headerAbout = "About"
+    private let footerAbout = "Write down all of the memories about this place."
     
     var body: some View {
         NavigationView {
             Form {
-                Section { TextField(promptTitle, text: $title).focused($isFocusKeyboard) }
+                Section { TextField(promptTitle, text: $title).focused($isFocusKeyboard) } header: {
+                    Text(headerTitle)
+                }
+                
                 Section {
-                    DatePicker("Start date", selection: $startDate, displayedComponents: [.date])
-                    DatePicker("End date", selection: $endDate, in: startDate..., displayedComponents: [.date])
+                    DatePicker(promptStartDate, selection: $startDate, displayedComponents: [.date])
+                    DatePicker(promptEndDate, selection: $endDate, in: startDate..., displayedComponents: [.date])
+                } header: {
+                    Text(headerDate)
+                } footer: {
+                    Text(footerDate)
                 }
                 
                 GetImageSection(image: $image, showingImagePicker: $showingImagePicker)
@@ -50,10 +67,11 @@ struct PlaceCreationView: View {
                     .focused($isFocusKeyboard)
                 
                 Section { TextEditor(text: $about).focused($isFocusKeyboard) } header: {
-                    Text("Description")
+                    Text(headerAbout)
                 } footer: {
-                    Text("Write down all of the memory about this place.")
+                    Text(footerAbout)
                 }
+                
                 AddressSelectionView(
                     address: $address, locations: $locations
                 ).focused($isFocusKeyboard)
@@ -109,7 +127,7 @@ struct PlaceCreationView: View {
     }
     
     private func allowSubmit() -> Bool {
-        title.isEmpty || address.isEmpty || about.isEmpty || locations.isEmpty
+        title.isEmpty || address.isEmpty || about.isEmpty || locations.isEmpty || people.isEmpty
     }
 }
 

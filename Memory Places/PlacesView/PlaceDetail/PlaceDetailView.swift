@@ -71,9 +71,9 @@ struct PlaceDetailView: View {
     private func authenticate() {
         let context = LAContext()
         var error: NSError?
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             let reason = "Authenticate permision will give you protection feature"
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
                 if success {
                     isValidAuthentication = true
                 } else {

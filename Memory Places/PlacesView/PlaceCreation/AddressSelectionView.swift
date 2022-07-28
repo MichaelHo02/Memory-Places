@@ -19,9 +19,12 @@ struct AddressSelectionView: View {
         locations.count == 0 ? "plus" : "xmark"
     }
     
+    private let promptAddress = "Enter full address"
+    private let headerAddress = "Address"
+    
     var body: some View {
         Section {
-            TextField("Address", text: $address)
+            TextField(promptAddress, text: $address)
             ZStack {
                 Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
@@ -33,9 +36,9 @@ struct AddressSelectionView: View {
                 .frame(minHeight: 400)
                 
                 Circle()
-                    .fill(.red)
-                    .opacity(0.5)
+                    .fill(.orange)
                     .frame(width: 16, height: 16)
+                    .opacity(0.5)
                 
                 VStack {
                     Spacer()
@@ -62,6 +65,8 @@ struct AddressSelectionView: View {
                     }
                 }
             }
+        } header: {
+            Text(headerAddress)
         }
     }
 }

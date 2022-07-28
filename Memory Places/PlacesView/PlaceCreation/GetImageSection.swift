@@ -14,16 +14,20 @@ struct GetImageSection: View {
     private let promptSelectImg = "Select Image"
     private let selectImgIcon = "photo"
     
+    private let headerImage = "Caption"
+    
     var body: some View {
         Section {
             image?
                 .resizable()
                 .scaledToFit()
-            
+                .padding(.vertical, 10)
             Button { showingImagePicker = true } label: {
                 Label(promptSelectImg, systemImage: selectImgIcon)
             }
+            .padding(.vertical, 10)
+        } header: {
+            Text(headerImage)
         }
-        .padding(.vertical)
     }
 }

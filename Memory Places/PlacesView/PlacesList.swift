@@ -20,7 +20,6 @@ struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
             NavigationLink { destination(item) } label: { label(item) }
         }
         .onDelete(perform: onDelete)
-        .onAppear { print(fetchRequest.count)}
     }
     
     init(

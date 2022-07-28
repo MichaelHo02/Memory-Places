@@ -20,6 +20,10 @@ struct ContentView: View {
     private let key = "title"
     private let format = "%K CONTAINS[c] %@"
     
+    private let promptSearch = "find places by name"
+    private let title = "Places"
+    private let fileName = "places.json"
+    
     var body: some View {
         NavigationView {
             List {
@@ -36,8 +40,8 @@ struct ContentView: View {
                     saveMOC(moc)
                 }
             }
-            .navigationTitle("Places")
-            .searchable(text: $searchValue, prompt: "Find places by name")
+            .navigationTitle(title)
+            .searchable(text: $searchValue, prompt: promptSearch)
             .toolbar {
                 ToolbarContentView(
                     addMockData: addMockData, deleteAll: deleteAll,
@@ -52,8 +56,7 @@ struct ContentView: View {
     }
     
     private func addMockData() {
-        let jsonPlaces: [JSONPlace] = Bundle.main.decode("places.json")
-        print(jsonPlaces[0])
+        let jsonPlaces: [JSONPlace] = Bundle.main.decode(fileName)
         for jsonPlace in jsonPlaces {
             let newPlace = Place(context: moc)
             newPlace.id = UUID()

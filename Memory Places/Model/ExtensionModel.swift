@@ -11,11 +11,13 @@ import SwiftUI
 
 extension Place {
     var wrappedImage: Image {
+        let nilImage = "photo"
+        
         if let imageData = image {
             if let uiImage = UIImage(data: imageData) {
                 return Image(uiImage: uiImage)
             }
         }
-        return Image(systemName: "photo")
+        return Image(systemName: nilImage)
     }
 }
