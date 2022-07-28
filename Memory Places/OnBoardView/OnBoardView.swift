@@ -43,6 +43,7 @@ struct OnBoardView: View {
             .padding(.bottom, 10)
         }
         .padding(30)
+        .interactiveDismissDisabled()
     }
 }
 

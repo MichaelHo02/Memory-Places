@@ -50,7 +50,7 @@ struct ContentView: View {
                 )
             }
             .sheet(isPresented: $showingCreationSheet) { PlaceCreationView() }
-            .fullScreenCover(isPresented: $showOnBoard) { OnBoardView() }
+            .sheet(isPresented: $showOnBoard) { OnBoardView() }
         }
         .navigationViewStyle(.stack)
     }
