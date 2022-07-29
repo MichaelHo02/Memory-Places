@@ -14,7 +14,6 @@ struct ToolbarContentView: ToolbarContent {
     private let clearAllMsg = "Clear All"
     private let clearAllLogo = "trash"
     private let pickerMsg = "Display Selection"
-    private let pickerOption = ["All", "Favorite"]
     private let newPlaceMsg = "New Place"
     private let newPlaceIcon = "square.and.pencil"
     private let moreMsg = "More"

@@ -60,6 +60,7 @@ struct ContentView: View {
             .sheet(isPresented: $showingCreationSheet) { PlaceCreationView() }
             .sheet(isPresented: $showOnBoard) { OnBoardView() }
             .alert(alertDeleteTitle, isPresented: $showingDeleteAllAlert) {
+                Button("Cancel", role: .cancel) {} .tint(.accentColor)
                 Button(deleteBtnTitle, role: .destructive, action: deleteAll)
             } message: {
                 Text(deleteMessage)

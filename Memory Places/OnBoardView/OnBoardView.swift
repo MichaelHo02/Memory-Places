@@ -36,7 +36,7 @@ struct OnBoardView: View {
         VStack(alignment: .leading, spacing: 20) {
             OnBoardItem(icon: icon1, title: sectionTitle1, description: sectionDescription1, color: .orange)
             
-            OnBoardItem(icon: icon2, title: sectionTitle2, description: sectionDescription2, color: .mint)
+            OnBoardItem(icon: icon2, title: sectionTitle2, description: sectionDescription2, color: .red)
             
             OnBoardItem(icon: icon3, title: sectionTitle3, description: sectionDescription3, color: .blue)
             

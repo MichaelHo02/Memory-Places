@@ -29,16 +29,6 @@ struct PlaceCreationView: View {
     @State private var inputImage: UIImage?
     
     @State private var locations = [Location]()
-
-    
-    private let promptTitle = "Name or Title"
-    private let promptStartDate = "Start date"
-    private let promptEndDate = "End date"
-    
-    private let headerTitle = "Name | Title"
-    
-    private let headerDate = "Timeline"
-    private let footerDate = "Pick a day when you arrived and when you leaved."
     
     private let headerAbout = "About"
     private let footerAbout = "Write down all of the memories about this place."
@@ -49,18 +39,10 @@ struct PlaceCreationView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section { TextField(promptTitle, text: $title).focused($isFocusKeyboard) } header: {
-                    Text(headerTitle)
-                }
+                NameSection(title: $title)
+                    .focused($isFocusKeyboard)
                 
-                Section {
-                    DatePicker(promptStartDate, selection: $startDate, displayedComponents: [.date])
-                    DatePicker(promptEndDate, selection: $endDate, in: startDate..., displayedComponents: [.date])
-                } header: {
-                    Text(headerDate)
-                } footer: {
-                    Text(footerDate)
-                }
+                DatePickerSection(startDate: $startDate, endDate: $endDate)
                 
                 GetImageSection(image: $image, showingImagePicker: $showingImagePicker)
                 
