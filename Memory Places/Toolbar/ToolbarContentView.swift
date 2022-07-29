@@ -21,9 +21,9 @@ struct ToolbarContentView: ToolbarContent {
     private let moreIcon = "ellipsis.circle"
     
     let addMockData: () -> Void
-    let deleteAll: () -> Void
     
     @Binding var showingCreationSheet: Bool
+    @Binding var showingDeleteAllAlert: Bool
     var count: Int
     
     var body: some ToolbarContent {
@@ -36,7 +36,7 @@ struct ToolbarContentView: ToolbarContent {
                 Button(action: addMockData) {
                     Label(addMockDataMsg, systemImage: addMockDataLogo)
                 }
-                Button(role: .destructive, action: deleteAll) {
+                Button(role: .destructive) { showingDeleteAllAlert.toggle() } label: {
                     Label(clearAllMsg, systemImage: clearAllLogo)
                 }
             } label: {

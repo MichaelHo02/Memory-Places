@@ -43,6 +43,9 @@ struct PlaceCreationView: View {
     private let headerAbout = "About"
     private let footerAbout = "Write down all of the memories about this place."
     
+    private let navigationTitle = "New Place"
+    private let buttonTitle = "Done"
+    
     var body: some View {
         NavigationView {
             Form {
@@ -76,7 +79,7 @@ struct PlaceCreationView: View {
                     address: $address, locations: $locations
                 ).focused($isFocusKeyboard)
             }
-            .navigationTitle("New Place")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarPlaceCreationView(
@@ -84,7 +87,7 @@ struct PlaceCreationView: View {
                 )
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    Button("Done") {
+                    Button(buttonTitle) {
                         isFocusKeyboard = false
                     }
                 }
@@ -99,9 +102,7 @@ struct PlaceCreationView: View {
     }
     
     private func loadImage() {
-        guard let inputImage = inputImage else {
-            return
-        }
+        guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
     }
     

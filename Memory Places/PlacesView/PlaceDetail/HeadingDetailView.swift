@@ -18,6 +18,7 @@ struct HeadingDetailView: View {
     
     private let addressIcon = "mappin"
     private let forwardIcon = "chevron.forward"
+    private let messageViewMap = "View on map"
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
@@ -35,7 +36,7 @@ struct HeadingDetailView: View {
                         MapView(latitude: latitude, longitude: longitude, locations: [Location(id: UUID(), latitude: latitude, longitude: longitude)])
                     } label: {
                         Image(systemName: addressIcon)
-                        Text("View on map")
+                        Text(messageViewMap)
                         Image(systemName: forwardIcon)
                     }
                     Spacer(minLength: 0)

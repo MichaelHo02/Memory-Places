@@ -12,16 +12,18 @@ struct MapView: View {
     @State private var mapRegion:MKCoordinateRegion
     var locations: [Location]
 
+    private let icon = "mappin"
+    private let navigationTitle = "Location"
     
     var body: some View {
         Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
-                Image(systemName: "mappin")
+                Image(systemName: icon)
                     .frame(width: 32, height: 32, alignment: .top)
                     .foregroundStyle(.red)
             }
         }
-        .navigationTitle("Location")
+        .navigationTitle(navigationTitle)
         .edgesIgnoringSafeArea(.bottom)
     }
     

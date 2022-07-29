@@ -11,10 +11,13 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var places: FetchedResults<Place>
     
+    
+//     appstorage scenestorage userdefault
 //    @AppStorage("showOnBoard") var showOnBoard = true
     @State var showOnBoard = true
     
     @State private var showingCreationSheet = false
+    @State private var showingDeleteAllAlert = false
     @State private var searchValue = ""
     
     private let key = "title"
@@ -23,6 +26,10 @@ struct ContentView: View {
     private let promptSearch = "find places by name"
     private let title = "Places"
     private let fileName = "places.json"
+    
+    private let alertDeleteTitle = "Delete All Places"
+    private let deleteBtnTitle = "Delete"
+    private let deleteMessage = "By clicking delete, all of the data will be clear. There will be no undo!"
     
     var body: some View {
         NavigationView {
@@ -44,13 +51,19 @@ struct ContentView: View {
             .searchable(text: $searchValue, prompt: promptSearch)
             .toolbar {
                 ToolbarContentView(
-                    addMockData: addMockData, deleteAll: deleteAll,
+                    addMockData: addMockData,
                     showingCreationSheet: $showingCreationSheet,
+                    showingDeleteAllAlert: $showingDeleteAllAlert,
                     count: places.count
                 )
             }
             .sheet(isPresented: $showingCreationSheet) { PlaceCreationView() }
             .sheet(isPresented: $showOnBoard) { OnBoardView() }
+            .alert(alertDeleteTitle, isPresented: $showingDeleteAllAlert) {
+                Button(deleteBtnTitle, role: .destructive, action: deleteAll)
+            } message: {
+                Text(deleteMessage)
+            }
         }
         .navigationViewStyle(.stack)
     }

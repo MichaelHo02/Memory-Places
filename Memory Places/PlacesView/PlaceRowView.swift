@@ -13,10 +13,15 @@ struct PlaceRowView: View {
     let isFavorited: Bool
     let image: Image
     
+    private let favoriteIcon = "star"
+    private let favoriteIconAlternative = ".fill"
+    private let lockIcon = "lock"
+    private let lockIconAlternative = ".open"
+    
     var body: some View {
         HStack {
-            Image(systemName: generateIcon("star", modifier: ".fill", haveModifier: isFavorited))
-                .foregroundColor(.yellow)
+            Image(systemName: generateIcon(favoriteIcon, modifier: favoriteIconAlternative, haveModifier: isFavorited))
+                .foregroundColor(isFavorited ? .yellow : .secondary)
             
             image
                 .resizable()
@@ -26,8 +31,9 @@ struct PlaceRowView: View {
                 .cornerRadius(5)
 
             Text(title)
+            
             Spacer()
-            Image(systemName: generateIcon("lock", modifier: ".open", haveModifier: !isLocked))
+            Image(systemName: generateIcon(lockIcon, modifier: lockIconAlternative, haveModifier: !isLocked))
         }
     }
 }

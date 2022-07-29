@@ -26,8 +26,8 @@ extension Place {
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var title: String
-    @NSManaged public var startDate: Date
-    @NSManaged public var endDate: Date
+    @NSManaged public var startDate: Date?
+    @NSManaged public var endDate: Date?
     @NSManaged public var people: [String]
 
 }

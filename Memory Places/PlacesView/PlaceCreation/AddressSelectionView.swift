@@ -9,7 +9,9 @@ import SwiftUI
 import MapKit
 
 struct AddressSelectionView: View {
-    @State var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 10, longitude: 106), span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50))
+    @State var mapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 10, longitude: 106), span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50)
+    )
     
     @Binding var address: String
     @Binding var locations: [Location]

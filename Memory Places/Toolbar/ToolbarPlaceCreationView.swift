@@ -13,14 +13,17 @@ struct ToolbarPlaceCreationView: ToolbarContent {
     let saveItem: () -> Void
     let allowSubmit: () -> Bool
     
+    private let addLabel = "Add"
+    private let cancelLabel = "Cancel"
+    
     var body: some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
-            Button("Add", action: saveItem)
+            Button(addLabel, action: saveItem)
                 .disabled(allowSubmit())
         }
         
         ToolbarItem(placement: .cancellationAction) {
-            Button("Cancel", role: .cancel) {
+            Button(cancelLabel, role: .cancel) {
                 dismiss()
             }
         }

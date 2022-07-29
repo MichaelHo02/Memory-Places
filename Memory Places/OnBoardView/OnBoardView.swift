@@ -10,8 +10,23 @@ import SwiftUI
 struct OnBoardView: View {
     @Environment(\.dismiss) var dismiss
 
+    private let title = "Welcom to Memory Place"
+    private let icon1 = "note.text"
+    private let icon2 = "square.grid.2x2"
+    private let icon3 = "hand.raised.square"
+    
+    private let sectionTitle1 = "Quick Creation"
+    private let sectionTitle2 = "Easy Organizing"
+    private let sectionTitle3 = "priotize Privacy"
+    
+    private let sectionDescription1 = "Simply type or use the quick toolbar to create places."
+    private let sectionDescription2 = "Cateogrize places with favorite tags. Search quickly to remind you of places you have visited."
+    private let sectionDescription3 = "Places can be lock so that you will be the only one to access the information."
+    
+    private let btnLabel = "Continue"
+    
     var body: some View {
-        Text("Welcome to Memory Place")
+        Text(title)
             .font(.largeTitle)
             .fontWeight(.bold)
             .multilineTextAlignment(.center)
@@ -19,11 +34,11 @@ struct OnBoardView: View {
             .padding(.bottom)
         
         VStack(alignment: .leading, spacing: 20) {
-            OnBoardItem(icon: "note.text", title: "Quick Creation", description: "Simply type or use the quick toolbar to create places.", color: .orange)
+            OnBoardItem(icon: icon1, title: sectionTitle1, description: sectionDescription1, color: .orange)
             
-            OnBoardItem(icon: "square.grid.2x2", title: "Easy Organizing", description: "Cateogrize places with favorite tags. Search quickly to remind you of places you have visited.", color: .mint)
+            OnBoardItem(icon: icon2, title: sectionTitle2, description: sectionDescription2, color: .mint)
             
-            OnBoardItem(icon: "hand.raised.square", title: "Priotize Privacy", description: "Places can be lock so that you will be the only one to access the information.", color: .blue)
+            OnBoardItem(icon: icon3, title: sectionTitle3, description: sectionDescription3, color: .blue)
             
             Spacer()
             
@@ -32,7 +47,7 @@ struct OnBoardView: View {
             } label: {
                 HStack {
                     Spacer()
-                    Text("Continue")
+                    Text(btnLabel)
                         .font(.title3)
                         .fontWeight(.semibold)
                     Spacer()

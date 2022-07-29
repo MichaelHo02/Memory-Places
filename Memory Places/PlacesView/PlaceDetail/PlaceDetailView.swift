@@ -28,6 +28,12 @@ struct PlaceDetailView: View {
     """
     
     private let deleteMsg = "Are you sure?"
+    private let alertMesageNonSupportAuth = "Non-support Authenticaiton"
+    private let alertMessageFailAuth = "Fail Authentication"
+    private let cancelTitle = "Cancel"
+    private let alertMessageDelete = "Delete Place"
+    private let deleteTitle = "Delete"
+    private let navigationTitle = "Details"
     
     var body: some View {
         ScrollView {
@@ -40,11 +46,10 @@ struct PlaceDetailView: View {
                     latitude: place.latitude,
                     longitude: place.longitude
                 )
-                
                 BodyDetailView(title: place.title, rate: Int(place.rate), startDate: place.startDate, endDate: place.endDate, people: place.people, about: place.about, longitude: place.longitude, latitude: place.latitude, address: place.address)
             }
         }
-        .navigationTitle("Details")
+        .navigationTitle(navigationTitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{ ToolbarDetailView(
             isLocked: $isLocked,
@@ -53,16 +58,16 @@ struct PlaceDetailView: View {
         )}
         .onAppear(perform: onAppear)
         .onDisappear(perform: onDisappear)
-        .alert("Non-support Authentication", isPresented: $showingNonSupportAuthentication) {} message: {
+        .alert(alertMesageNonSupportAuth, isPresented: $showingNonSupportAuthentication) {} message: {
             Text(nonSupportAuthenticationMsg)
         }
-        .alert("Fail Authentication", isPresented: $showingFailAuthenticationAlert) {
-            Button("Cancel", role: .cancel) {
+        .alert(alertMesageNonSupportAuth, isPresented: $showingFailAuthenticationAlert) {
+            Button(cancelTitle, role: .cancel) {
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        .alert("Delete Place", isPresented: $showingDeleteAlert) {
-            Button("Delete", role: .destructive, action: deletePlace)
+        .alert(alertMessageDelete, isPresented: $showingDeleteAlert) {
+            Button(deleteTitle, role: .destructive, action: deletePlace)
         } message: {
             Text(deleteMsg)
         }
@@ -108,5 +113,6 @@ struct PlaceDetailView: View {
         isDelete = true
         moc.delete(place)
         saveMOC(moc)
+        presentationMode.wrappedValue.dismiss()
     }
 }

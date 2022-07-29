@@ -11,11 +11,16 @@ struct PeopleSectionView: View {
     @Binding var attendees: [String]
     @State var newPerson = ""
     
+    private let icon = "person"
+    private let promptTextField = "New Attendee"
+    private let addIcon = "plus.circle.fill"
+    private let header = "Attendees"
+    
     var body: some View {
         Section {
             ForEach(attendees, id: \.self) { attendee in
                 HStack {
-                    Image(systemName: "person")
+                    Image(systemName: icon)
                     Text(attendee)
                 }
             }
@@ -23,7 +28,7 @@ struct PeopleSectionView: View {
                 attendees.remove(atOffsets: indices)
             }
             HStack {
-                TextField("New Attendee", text: $newPerson)
+                TextField(promptTextField, text: $newPerson)
                     .onSubmit {
                         if newPerson.isEmpty { return }
                         withAnimation {
@@ -39,12 +44,12 @@ struct PeopleSectionView: View {
                         newPerson = ""
                     }
                 } label: {
-                    Image(systemName: "plus.circle.fill")
+                    Image(systemName: addIcon)
                 }
                 .disabled(newPerson.isEmpty)
             }
         } header: {
-            Text("Attendees")
+            Text(header)
         }
     }
 }
