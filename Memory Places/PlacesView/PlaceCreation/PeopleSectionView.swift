@@ -36,27 +36,23 @@ struct PeopleSectionView: View {
             }
             HStack {
                 TextField(promptTextField, text: $newPerson)
-                    .onSubmit {
-                        if newPerson.isEmpty { return }
-                        withAnimation {
-                            let attendee = newPerson
-                            attendees.append(attendee)
-                            newPerson = ""
-                        }
-                    }
-                Button {
-                    withAnimation {
-                        let attendee = newPerson
-                        attendees.append(attendee)
-                        newPerson = ""
-                    }
-                } label: {
+                    .onSubmit(addPerson)
+                Button(action: addPerson) {
                     Image(systemName: addIcon)
                 }
-                .disabled(newPerson.isEmpty)
+                .disabled(newPerson.trim().isEmpty)
             }
         } header: {
             Text(header)
+        }
+    }
+    
+    private func addPerson() {
+        if newPerson.trim().isEmpty { return }
+        withAnimation {
+            let attendee = newPerson
+            attendees.append(attendee)
+            newPerson = ""
         }
     }
 }

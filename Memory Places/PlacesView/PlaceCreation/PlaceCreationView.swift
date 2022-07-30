@@ -117,7 +117,7 @@ struct PlaceCreationView: View {
     }
     
     private func allowSubmit() -> Bool {
-        title.isEmpty || address.isEmpty || about.isEmpty || locations.isEmpty || people.isEmpty
+        title.trim().isEmpty || address.trim().isEmpty || about.trim().isEmpty || locations.isEmpty || people.isEmpty
     }
 }
 

@@ -48,3 +48,9 @@ extension Bundle {
         return loaded
     }
 }
+
+extension String {
+    func trim(using characterSet: CharacterSet = .whitespacesAndNewlines) -> String {
+        trimmingCharacters(in: characterSet)
+    }
+}
