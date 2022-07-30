@@ -14,7 +14,8 @@
 
 import Foundation
 
-struct Location: Identifiable, Codable, Equatable {
+/// Location will store the id, latitude and longitude
+struct Location: Identifiable, Equatable {
     let id: UUID
     let latitude: Double
     let longitude: Double

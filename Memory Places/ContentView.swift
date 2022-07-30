@@ -15,13 +15,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    /// Get the MOC
     @Environment(\.managedObjectContext) var moc
+    
+    /// Get all places in core data
     @FetchRequest(sortDescriptors: []) var places: FetchedResults<Place>
     
-    
-//     appstorage scenestorage userdefault
-//    @AppStorage("showOnBoard") var showOnBoard = true
-    @State var showOnBoard = true
+    /// Read and write values from user defaults
+    @AppStorage("showOnBoard") var showOnBoard = true
     
     @State private var showingCreationSheet = false
     @State private var showingDeleteAllAlert = false
@@ -38,9 +40,13 @@ struct ContentView: View {
     private let deleteBtnTitle = "Delete"
     private let deleteMessage = "By clicking delete, all of the data will be clear. There will be no undo!"
     
+    /// Show the main view of the app with list of places
     var body: some View {
         NavigationView {
             List {
+                // generate a list of navigation view (places)
+                // provides label for each navigation view
+                // provides action of on delete for the list
                 PlacesList(
                     filterKey: key, filterValue: searchValue, format: format) { (place: Place) in
                     PlaceDetailView(place: place)
@@ -57,6 +63,7 @@ struct ContentView: View {
             .navigationTitle(title)
             .searchable(text: $searchValue, prompt: promptSearch)
             .toolbar {
+                // provide the toolbar for the content view
                 ToolbarContentView(
                     addMockData: addMockData,
                     showingCreationSheet: $showingCreationSheet,
@@ -64,20 +71,26 @@ struct ContentView: View {
                     count: places.count
                 )
             }
+            // sheet for creating a place
             .sheet(isPresented: $showingCreationSheet) { PlaceCreationView() }
+            // sheet for onboarding view
             .sheet(isPresented: $showOnBoard) { OnBoardView() }
+            // alert for deleting all the data
             .alert(alertDeleteTitle, isPresented: $showingDeleteAllAlert) {
-                Button("Cancel", role: .cancel) {} .tint(.accentColor)
                 Button(deleteBtnTitle, role: .destructive, action: deleteAll)
             } message: {
                 Text(deleteMessage)
             }
         }
+        // this will ensure that the toolbar will not corrupt ** important **
         .navigationViewStyle(.stack)
     }
     
+    /// This function is read the json files and add to the core data
     private func addMockData() {
+        // read the json files
         let jsonPlaces: [JSONPlace] = Bundle.main.decode(fileName)
+        // create an object and save to core data
         for jsonPlace in jsonPlaces {
             let newPlace = Place(context: moc)
             newPlace.id = UUID()
@@ -97,6 +110,7 @@ struct ContentView: View {
         }
     }
     
+    /// This function is to delete all the places in core data
     private func deleteAll() {
         for place in places {
             moc.delete(place)

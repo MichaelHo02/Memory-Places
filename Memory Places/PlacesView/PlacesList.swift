@@ -15,20 +15,40 @@
 import SwiftUI
 import CoreData
 
+/// This view is to display a list of navigation link base on the query and the corresponding data type
 struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
+    
+    /// fetchRequest will store all the objects as a result from a query
     @FetchRequest var fetchRequest: FetchedResults<T>
     
+    /// This view is to display a view after you tap on the navigation link
     let destination: (T) -> Destination
+    
+    /// This view is to display a view for navigation link
     let label: (T) -> Label
+    
+    /// This function is responsible for removing item out of the list
     let onDelete: (IndexSet) -> Void
     
+    /// This view is to render the list of navigation link
     var body: some View {
+        // iterate through the result
         ForEach(fetchRequest, id: \.self) { item in
+            // create a navigation link with destination view and the label view
             NavigationLink { destination(item) } label: { label(item) }
         }
+        // perform onDelete function when user remove the item in the list
         .onDelete(perform: onDelete)
     }
     
+    /// Init the value of the fetchRequest and also provide views for destination, label, and function to delete items
+    /// - Parameters:
+    ///   - filterKey: A string that present the key attribute of the object that need query
+    ///   - filterValue: A string that present the value that the key attribute need to match in the query
+    ///   - format: A string that present the query which will combine key and value filter to query
+    ///   - destination: The destination view that render after user tap on the navigation link
+    ///   - label: The label view that render when display the navigation link view
+    ///   - onDelete: The function that will handle the removing of an item in the list
     init(
         filterKey: String,
         filterValue: String,
@@ -37,9 +57,12 @@ struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
         @ViewBuilder label: @escaping (T) -> Label,
         onDelete: @escaping (IndexSet) -> Void
     ) {
+        // if the filter value is empty mean that there is no search
+        // then get all the corresponding object in core data
         if filterValue.isEmpty {
             _fetchRequest = FetchRequest<T>(sortDescriptors: [])
         } else {
+            // get the objects that match the query
             _fetchRequest = FetchRequest<T>(
                 sortDescriptors: [], predicate: NSPredicate(format: format, filterKey, filterValue)
             )

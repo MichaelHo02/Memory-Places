@@ -15,11 +15,11 @@
 import SwiftUI
 import MapKit
 
+/// This view will render the heading of the detail view
 struct HeadingDetailView: View {
     let image: Image
     let paddingSize: CGFloat
     let title: String
-    let address: String
     let latitude: Double
     let longitude: Double
     
@@ -28,12 +28,14 @@ struct HeadingDetailView: View {
     private let messageViewMap = "View on map"
     
     var body: some View {
+        // make zstack to lay the image as a background
         ZStack(alignment: .bottomLeading) {
             image
                 .resizable()
                 .scaledToFit()
                 .padding(paddingSize)
             
+            // make a vstack to store title and the navigation link to the map
             VStack(alignment: .leading, spacing: 5) {
                 Text(title)
                     .font(.title)
@@ -46,6 +48,7 @@ struct HeadingDetailView: View {
                         Text(messageViewMap)
                         Image(systemName: forwardIcon)
                     }
+                    // having spacer to ensure the rectangle will be the entire width
                     Spacer(minLength: 0)
                 }
                 .foregroundStyle(.secondary)

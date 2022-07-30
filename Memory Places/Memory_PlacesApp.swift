@@ -16,8 +16,12 @@ import SwiftUI
 
 @main
 struct Memory_PlacesApp: App {
+    
+    /// Init the data controller that responsible for managing the data in core data
     @StateObject private var dataController = DataController()
     
+    /// Display the main scene and storing the view context to the managed object context
+    /// This will help the app to access the managedObjectContext (MOC) from any children inside ContentView
     var body: some Scene {
         WindowGroup {
             ContentView()

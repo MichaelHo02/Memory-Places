@@ -17,6 +17,9 @@ import CoreData
 import SwiftUI
 
 extension Place {
+    
+    /// This property is to get the image from the binary data save inside core data
+    /// If there is no image saved in core data then it will provide a prompt image
     var wrappedImage: Image {
         let nilImage = "photo"
         

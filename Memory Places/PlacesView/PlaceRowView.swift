@@ -14,18 +14,29 @@
 
 import SwiftUI
 
+/// This view is to display a row for navigation link
 struct PlaceRowView: View {
+    
+    /// A string that display the title
     let title: String
+    
+    /// A boolean that show the status of either the item is lock or not
     let isLocked: Bool
+    
+    /// A boolean that show the status of either the item is favorited or not
     let isFavorited: Bool
+    
+    /// An Image that will be render in navigation link
     let image: Image
     
+    /// Const value for icons
     private let favoriteIcon = "star"
     private let favoriteIconAlternative = ".fill"
     private let lockIcon = "lock"
     private let lockIconAlternative = ".open"
     
     var body: some View {
+        // Create a row that has the Favorited status -> Image -> Title -> Space -> Lock status
         HStack {
             Image(systemName: generateIcon(favoriteIcon, modifier: favoriteIconAlternative, haveModifier: isFavorited))
                 .foregroundColor(isFavorited ? .yellow : .secondary)

@@ -14,6 +14,8 @@
 
 import Foundation
 
+/// This struct will responsible as a Data Transfer Object
+/// It will store the data from json files and create object in core data
 struct JSONPlace: Codable {
     let title: String
     let startDate: Date
