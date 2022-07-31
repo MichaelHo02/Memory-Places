@@ -22,16 +22,20 @@ struct OnBoardItem: View {
     let color: Color
     
     var body: some View {
+        // create a row
         HStack(spacing: 20) {
+            // display the image icon
             Image(systemName: icon)
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(color)
                 .frame(width: 50, height: 50)
-            
+            // create a text block
             VStack(alignment: .leading) {
+                // title
                 Text(title)
                     .fontWeight(.semibold)
+                // description
                 Text(description)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.leading)

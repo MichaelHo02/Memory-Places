@@ -17,10 +17,13 @@ import CoreData
 
 class DataController: ObservableObject {
     
+    /// Prepare Core Data to load Model
     let persistentContainer = NSPersistentContainer(name: "Model")
         
     init() {
+        // load the data model (core data can see all the information)
         persistentContainer.loadPersistentStores { description, error in
+            // if there is any error then stop the app
             if let error = error {
                 fatalError(error.localizedDescription)
             }

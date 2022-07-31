@@ -31,6 +31,7 @@ struct ToolbarDetailView: ToolbarContent {
     private let favoriteIconAlternative = ".fill"
     
     var body: some ToolbarContent {
+        // button to locked
         ToolbarItem(placement: .primaryAction) {
             Button { isLocked.toggle() } label: {
                 Label(lockLabel, systemImage: generateIcon(
@@ -40,9 +41,11 @@ struct ToolbarDetailView: ToolbarContent {
         }
         
         ToolbarItemGroup(placement: .bottomBar) {
+            // delete button
             Button(role: .destructive) { showingDeleteAlert = true } label: {
                 Label(deleteLabel, systemImage: deleteIcon)
             }
+            // favorite button
             Button { isFavorited.toggle() } label: {
                 Label(favoriteLabel, systemImage: generateIcon(
                     favoriteIcon, modifier: favoriteIconAlternative, haveModifier: isFavorited

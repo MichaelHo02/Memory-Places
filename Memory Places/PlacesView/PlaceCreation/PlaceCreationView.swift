@@ -17,10 +17,16 @@ import MapKit
 
 struct PlaceCreationView: View {
     @Environment(\.managedObjectContext) var moc
+    
+    /// The dismiss will help go back to the parent view
     @Environment(\.dismiss) var dismiss
+    
+    /// The FocusState  to track which view recieves user input
+    /// If the value is true then the view is focus else false then nothing is focused
     @FocusState private var isFocusKeyboard
 
     
+    /// Provide default config
     @State private var title = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
@@ -36,9 +42,6 @@ struct PlaceCreationView: View {
     @State private var inputImage: UIImage?
     
     @State private var locations = [Location]()
-    
-    private let headerAbout = "About"
-    private let footerAbout = "Write down all of the memories about this place."
     
     private let navigationTitle = "New Place"
     private let buttonTitle = "Done"
@@ -58,22 +61,21 @@ struct PlaceCreationView: View {
                 PeopleSectionView(attendees: $people)
                     .focused($isFocusKeyboard)
                 
-                Section { TextEditor(text: $about).focused($isFocusKeyboard) } header: {
-                    Text(headerAbout)
-                } footer: {
-                    Text(footerAbout)
-                }
+                AboutSection(about: $about)
+                    .focused($isFocusKeyboard)
                 
-                AddressSelectionView(
-                    address: $address, locations: $locations
-                ).focused($isFocusKeyboard)
+                AddressSelectionView(address: $address, locations: $locations)
+                    .focused($isFocusKeyboard)
             }
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                // provide toolbar for creation view
                 ToolbarPlaceCreationView(
                     dismiss: _dismiss, saveItem: saveItem, allowSubmit: allowSubmit
                 )
+                
+                // provide button next to keyboard to dismiss the keyboard
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     Button(buttonTitle) {
@@ -82,19 +84,22 @@ struct PlaceCreationView: View {
                 }
             }
             .onAppear(perform: loadImage)
+            // show the sheet for picking image
             .sheet(isPresented: $showingImagePicker) { ImagePicker(image: $inputImage) }
+            // when there is new change in input image then update the image
             .onChange(of: inputImage) { _ in loadImage() }
         }
-        .onSubmit {
-            isFocusKeyboard = false
-        }
+        // when submit then dismiss keyboard
+        .onSubmit { isFocusKeyboard = false }
     }
     
+    /// This function is to get the input image and add to the render view
     private func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
     }
     
+    /// This function is to save the item (place) into core data
     private func saveItem() {
         let newPlace = Place(context: moc)
         newPlace.id = UUID()
@@ -107,6 +112,7 @@ struct PlaceCreationView: View {
         newPlace.rate = Int16(rate)
         newPlace.isFavorited = isFavorited
         newPlace.isLocked = isLocked
+        // compress the jpeg into binary data
         newPlace.image = inputImage?.jpegData(compressionQuality: 0.5)
         if let location = locations.first {
             newPlace.latitude = location.latitude
@@ -116,8 +122,14 @@ struct PlaceCreationView: View {
         dismiss()
     }
     
+    /// This function is to see if the submit is allowed or not
+    /// - Returns: Boolean true -> all the fields are filled & false -> all the fields are not filled
     private func allowSubmit() -> Bool {
-        title.trim().isEmpty || address.trim().isEmpty || about.trim().isEmpty || locations.isEmpty || people.isEmpty
+        title.trim().isEmpty ||
+        address.trim().isEmpty ||
+        about.trim().isEmpty ||
+        locations.isEmpty ||
+        people.isEmpty
     }
 }
 

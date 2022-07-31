@@ -22,10 +22,21 @@ struct DatePickerSection: View {
     private let promptEndDate = "End date"
     private let headerDate = "Timeline"
     private let footerDate = "Pick a day when you arrived and when you leaved."
+    
     var body: some View {
         Section {
-            DatePicker(promptStartDate, selection: $startDate, displayedComponents: [.date])
-            DatePicker(promptEndDate, selection: $endDate, in: startDate..., displayedComponents: [.date])
+            DatePicker(
+                promptStartDate,
+                selection: $startDate,
+                displayedComponents: [.date]
+            )
+            // only pick date from startDate forward
+            DatePicker(
+                promptEndDate,
+                selection: $endDate,
+                in: startDate...,
+                displayedComponents: [.date]
+            )
         } header: {
             Text(headerDate)
         } footer: {

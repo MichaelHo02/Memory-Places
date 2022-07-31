@@ -23,8 +23,12 @@ struct MapView: View {
     private let navigationTitle = "Location"
     
     var body: some View {
+        // create a map with map region
+        // add locations annotation items
         Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
+            // create a map annotation base on the latitude and longitude
             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
+                // render an icon
                 Image(systemName: icon)
                     .frame(width: 32, height: 32, alignment: .top)
                     .foregroundStyle(.red)
@@ -34,6 +38,11 @@ struct MapView: View {
         .edgesIgnoringSafeArea(.bottom)
     }
     
+    /// This init will init the map region
+    /// - Parameters:
+    ///   - latitude: a double that present the latitude degree
+    ///   - longitude: a double that present the longitude degree
+    ///   - locations: a list of location that will be rendered in the map as notation
     init(latitude: Double, longitude: Double, locations: [Location]) {
         self.mapRegion = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),

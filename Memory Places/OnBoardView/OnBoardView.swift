@@ -24,7 +24,7 @@ struct OnBoardView: View {
     
     private let sectionTitle1 = "Quick Creation"
     private let sectionTitle2 = "Easy Organizing"
-    private let sectionTitle3 = "priotize Privacy"
+    private let sectionTitle3 = "Priotize Privacy"
     
     private let sectionDescription1 = "Simply type or use the quick toolbar to create places."
     private let sectionDescription2 = "Cateogrize places with favorite tags. Search quickly to remind you of places you have visited."
@@ -33,6 +33,7 @@ struct OnBoardView: View {
     private let btnLabel = "Continue"
     
     var body: some View {
+        // title
         Text(title)
             .font(.largeTitle)
             .fontWeight(.bold)
@@ -40,6 +41,7 @@ struct OnBoardView: View {
             .padding(.top, 60)
             .padding(.bottom)
         
+        // criteria for each item
         VStack(alignment: .leading, spacing: 20) {
             OnBoardItem(icon: icon1, title: sectionTitle1, description: sectionDescription1, color: .orange)
             
@@ -48,10 +50,9 @@ struct OnBoardView: View {
             OnBoardItem(icon: icon3, title: sectionTitle3, description: sectionDescription3, color: .blue)
             
             Spacer()
-            
-            Button {
-                dismiss()
-            } label: {
+        
+            // continue button to remove the sheet
+            Button { dismiss() } label: {
                 HStack {
                     Spacer()
                     Text(btnLabel)
@@ -65,6 +66,7 @@ struct OnBoardView: View {
             .padding(.bottom, 10)
         }
         .padding(30)
+        // cannot be drag to disable the sheet
         .interactiveDismissDisabled()
     }
 }

@@ -24,11 +24,13 @@ struct ToolbarPlaceCreationView: ToolbarContent {
     private let cancelLabel = "Cancel"
     
     var body: some ToolbarContent {
+        // confirm button - create item
         ToolbarItem(placement: .confirmationAction) {
             Button(addLabel, action: saveItem)
                 .disabled(allowSubmit())
         }
         
+        // cancle button
         ToolbarItem(placement: .cancellationAction) {
             Button(cancelLabel, role: .cancel) {
                 dismiss()

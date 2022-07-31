@@ -33,11 +33,13 @@ struct ToolbarContentView: ToolbarContent {
     var count: Int
     
     var body: some ToolbarContent {
-        
+        // create edit button to delete element
         ToolbarItem(placement: .primaryAction) {
             EditButton()
         }
+
         ToolbarItemGroup(placement: .bottomBar) {
+            // create a menu with buttons
             Menu {
                 Button(action: addMockData) {
                     Label(addMockDataMsg, systemImage: addMockDataLogo)

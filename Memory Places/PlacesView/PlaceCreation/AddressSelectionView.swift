@@ -16,6 +16,8 @@ import SwiftUI
 import MapKit
 
 struct AddressSelectionView: View {
+    
+    /// Set map region to be center of Vietnam as default value
     @State var mapRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 10, longitude: 106), span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50)
     )
@@ -45,7 +47,7 @@ struct AddressSelectionView: View {
                 .frame(minHeight: 400)
                 
                 Circle()
-                    .fill(.orange)
+                    .fill(.blue)
                     .frame(width: 16, height: 16)
                     .opacity(0.5)
                 
@@ -54,6 +56,8 @@ struct AddressSelectionView: View {
                     HStack {
                         Spacer()
                         Button {
+                            // if there is no location do add action
+                            // else do remove action
                             if locations.count == 0 {
                                 let newLocation = Location(
                                     id: UUID(),

@@ -25,6 +25,7 @@ struct PeopleSectionView: View {
     
     var body: some View {
         Section {
+            // create a list of attendees
             ForEach(attendees, id: \.self) { attendee in
                 HStack {
                     Image(systemName: icon)
@@ -34,6 +35,7 @@ struct PeopleSectionView: View {
             .onDelete { indices in
                 attendees.remove(atOffsets: indices)
             }
+            // create an input field to create attendees
             HStack {
                 TextField(promptTextField, text: $newPerson)
                     .onSubmit(addPerson)
@@ -47,7 +49,9 @@ struct PeopleSectionView: View {
         }
     }
     
+    /// This function will create a person base on the input in text field
     private func addPerson() {
+        // if the trimmed string is empty then do not create new person
         if newPerson.trim().isEmpty { return }
         withAnimation {
             let attendee = newPerson
