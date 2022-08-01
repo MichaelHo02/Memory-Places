@@ -52,12 +52,6 @@ struct ContentView: View {
                     PlaceDetailView(place: place)
                 } label: { (place: Place) in
                     PlaceRowView(title: place.title, isLocked: place.isLocked, isFavorited: place.isFavorited, image: place.wrappedImage)
-                } onDelete: { offsets in
-                    for offset in offsets {
-                        let place = places[offset]
-                        moc.delete(place)
-                    }
-                    saveMOC(moc)
                 }
             }
             .navigationTitle(title)

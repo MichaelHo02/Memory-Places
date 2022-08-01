@@ -17,6 +17,7 @@ import CoreData
 
 /// This view is to display a list of navigation link base on the query and the corresponding data type
 struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
+    @Environment(\.managedObjectContext) var moc
     
     /// fetchRequest will store all the objects as a result from a query
     @FetchRequest var fetchRequest: FetchedResults<T>
@@ -27,9 +28,6 @@ struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
     /// This view is to display a view for navigation link
     let label: (T) -> Label
     
-    /// This function is responsible for removing item out of the list
-    let onDelete: (IndexSet) -> Void
-    
     /// This view is to render the list of navigation link
     var body: some View {
         // iterate through the result
@@ -38,7 +36,13 @@ struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
             NavigationLink { destination(item) } label: { label(item) }
         }
         // perform onDelete function when user remove the item in the list
-        .onDelete(perform: onDelete)
+        .onDelete { offsets in
+            for offset in offsets {
+                let place = fetchRequest[offset]
+                moc.delete(place)
+            }
+            saveMOC(moc)
+        }
     }
     
     /// Init the value of the fetchRequest and also provide views for destination, label, and function to delete items
@@ -54,8 +58,7 @@ struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
         filterValue: String,
         format: String,
         @ViewBuilder destination: @escaping (T) -> Destination,
-        @ViewBuilder label: @escaping (T) -> Label,
-        onDelete: @escaping (IndexSet) -> Void
+        @ViewBuilder label: @escaping (T) -> Label
     ) {
         // if the filter value is empty mean that there is no search
         // then get all the corresponding object in core data
@@ -69,6 +72,5 @@ struct PlacesList<T: NSManagedObject, Destination: View, Label: View>: View {
         }
         self.destination = destination
         self.label = label
-        self.onDelete = onDelete
     }
 }
